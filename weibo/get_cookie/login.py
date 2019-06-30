@@ -7,8 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import sys
 
-
-
 sys.path.append(os.getcwd())
 
 LOCAL_MONGO_HOST = '127.0.0.1'
@@ -30,7 +28,7 @@ class WeiboLogin():
 
     def open(self):
         """
-        打开网页输入用户名密码并点击
+        使用自动化工具打开网页输入用户名密码并点击
         :return: None
         """
         self.browser.get(self.url)
@@ -43,7 +41,7 @@ class WeiboLogin():
 
     def run(self):
         """
-        破解入口
+        获取cookie
         :return:
         """
         self.open()
@@ -58,9 +56,8 @@ class WeiboLogin():
 
 
 if __name__ == '__main__':
-    # 在目录中新建一个account.txt文件，格式需要与account_sample.txt相同
-    # 其实就是把www.xiaohao.shop买的账号复制到新建的account.txt文件中
-    #file_path = os.getcwd() + r'\sina\account_build\account.txt.txt'
+    # 在目录account.txt中添加更多的微博账号 以'----'分隔开
+    #file_path = os.getcwd() + r'\weibo\get_cookie\account.txt'
     file_path = 'E:/project/weibo/weibo/get_cookie/account.txt'
     with open(file_path, 'r') as f:
         lines = f.readlines()
