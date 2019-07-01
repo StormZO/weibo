@@ -13,9 +13,9 @@ class WeiboSpider(Spider):
     base_url = "https://weibo.cn"
 
     def start_requests(self):
+        # 微博用户id
         start_uids = [
-            '2803301701',  
-            '1699432410'
+            '2803301701'
         ]
         for uid in start_uids:
             yield Request(url="https://weibo.cn/%s/info" % uid, callback=self.parse_information)
